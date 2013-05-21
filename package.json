@@ -1,0 +1,29 @@
+{
+  "name": "cli-status",
+  "version": "0.1.0",
+  "description": "Highly configurable status indicators for your node.js cli.",
+  "keywords": [
+    "cli",
+    "status",
+    "progress",
+    "indicator"
+  ],
+  "homepage": "https://github.com/fishrock123/cli-status",
+  "author": {
+    "name": "Jeremiah Senkpiel",
+    "email": "fishrock123@rocketmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fishrock123/cli-status.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fishrock123/cli-status/issues",
+    "email": "fishrock123@rocketmail.com"
+  },
+  "main": "./index.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "license": "MIT"
+}
