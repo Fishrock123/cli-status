@@ -20,7 +20,7 @@ Or, add this as a dependency in your project's `package.json`
 
 ## How to use:
 
-[Configuration options](http://github.com/fishrock123/cli-status/index.js#75)
+[Configuration options](https://github.com/Fishrock123/cli-status/blob/master/index.js#L75)
 
 ##### Manual stepping:
 ```js
