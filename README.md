@@ -22,7 +22,7 @@ Or, add this as a dependency in your project's `package.json`
 
 [Configuration options](https://github.com/Fishrock123/cli-status/blob/master/index.js#L75)
 
-##### Manual stepping:
+#### Manual stepping:
 ```js
 var status = require('cli-status');
 
@@ -35,7 +35,7 @@ while (something) {
 }
 ```
 
-##### Automatic polling:
+#### Automatic polling:
 ```js
 var status = require('cli-status');
 var files = [];
