@@ -7,6 +7,6 @@
 * - fn: configuration(obj:options)
 * - obj: defaults
 * - fn: start(fn:polling)
-* - fn: end
+* - fn: end()
 
 ---
