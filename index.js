@@ -22,11 +22,11 @@ makeBar = function() {
     return str;
 };
 
-barCalculator = function(frac) {
+barCalculator = function() {
 	if (progress < 0 || progress > total || isNaN(progress)) return false;
 	if (ended && progress < total) ended = false;
-    barLength = Math.floor(length * (frac ? progress / frac : progress));
     if (barLength == 0 && progress > 0) barLength = total;
+    barLength = Math.floor(length * (progress / total));
     return true;
 };
 
@@ -45,19 +45,19 @@ checkEnded = function(progress) {
  */
 
 stepPercent = function(prog) {
-	if (progress === prog / total) return;
-	progress = prog / total;
+	if (progress === prog) return;
+	progress = prog;
 	if (!barCalculator()) return;
 
-	process.stdout.write(' ' + prefix + ' [' + makeBar() + '] ' + Math.floor(progress * 100) + '% ' + suffix + checkEnded(prog));
+	process.stdout.write(' ' + prefix + ' [' + makeBar() + '] ' + Math.floor((progress / total) * 100) + '% ' + suffix + checkEnded(prog));
 };
 
 stepFraction = function(prog) {
 	if (progress === prog) return;
 	progress = prog;
-    if (!barCalculator(total)) return;
+    if (!barCalculator()) return;
 
-    process.stdout.write(' ' + prefix + ' [' + makeBar() + '] ' + progress + '/' + total + ' ' + suffix + checkEnded(progress));
+    process.stdout.write(' ' + prefix + ' [' + makeBar() + '] ' + progress + '/' + total + ' ' + suffix + checkEnded(prog));
 };
 
 stepEllipsis = function() {
