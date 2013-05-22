@@ -25,8 +25,8 @@ makeBar = function() {
 barCalculator = function() {
 	if (progress < 0 || progress > total || isNaN(progress)) return false;
 	if (ended && progress < total) ended = false;
-    if (barLength == 0 && progress > 0) barLength = total;
     barLength = Math.floor(length * (progress / total));
+    if (barLength == 0 && progress > 0) barLength = (total >= 10 ? 1 : 0);
     return true;
 };
 
