@@ -30,7 +30,7 @@ barCalculator = function() {
     return true;
 };
 
-checkEnded = function(progress) {
+checkEnded = function() {
 	if (ended || (ended = (progress >= total))) {
     	if (stepper) clearInterval(stepper);
     	return '\n';
@@ -49,7 +49,7 @@ stepPercent = function(prog) {
 	progress = prog;
 	if (!barCalculator()) return;
 
-	process.stdout.write(' ' + prefix + ' [' + makeBar() + '] ' + Math.floor((progress / total) * 100) + '% ' + suffix + checkEnded(prog));
+	process.stdout.write(' ' + prefix + ' [' + makeBar() + '] ' + Math.floor((progress / total) * 100) + '% ' + suffix + checkEnded());
 };
 
 stepFraction = function(prog) {
@@ -57,7 +57,7 @@ stepFraction = function(prog) {
 	progress = prog;
     if (!barCalculator()) return;
 
-    process.stdout.write(' ' + prefix + ' [' + makeBar() + '] ' + progress + '/' + total + ' ' + suffix + checkEnded(prog));
+    process.stdout.write(' ' + prefix + ' [' + makeBar() + '] ' + progress + '/' + total + ' ' + suffix + checkEnded());
 };
 
 stepEllipsis = function() {
