@@ -59,6 +59,6 @@ status.end();
 
 ### Testing:
 
-Clone the repo, then run:
+Install or clone the repo, then run:
 
-    $> node test.js
+    $> npm test
