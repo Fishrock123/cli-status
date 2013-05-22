@@ -83,9 +83,22 @@ function testStepper() {
         if (progress >= 13) {
             clearInterval(interval);
             status.end();
-            testEverything();
+            testZeroOne();
         }
     }, 500);
+}
+
+function testZeroOne() {
+    console.log('Testing bar with 0 and 1.');
+    status.configure().step(0);
+
+    setTimeout(function() {
+        status.step(1);
+        setTimeout(function() {
+            console.log('');
+            testEverything();
+        }, 2000);
+    }, 2000);
 }
 
 function testEverything() {
