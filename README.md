@@ -14,7 +14,7 @@ Or, add this as a dependency in your project's `package.json`
 
 ```json
 "dependencies": {
-	"cli-status": "0.1.x"
+  "cli-status": "0.1.x"
 }
 ```
 
@@ -27,11 +27,11 @@ Or, add this as a dependency in your project's `package.json`
 var status = require('cli-status');
 
 status.configure({
-	// See options
+  // See options
 });
 
 while (something) {
-	status.step(progress);
+  status.step(progress);
 }
 ```
 
@@ -41,16 +41,16 @@ var status = require('cli-status');
 var files = [];
 
 status.configure({
-	// See options
-	type: '/',
+  // See options
+  type: '/',
     total: server.numFiles()
 }).start(function() {
-	return files.length;
+  return files.length;
 });
 
 while (files.length < server.numFiles()) {
-	var data = server.getNext();
-	files.push(data);
+  var data = server.getNext();
+  files.push(data);
 }
 
 status.end();
